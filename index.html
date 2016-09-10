@@ -137,17 +137,16 @@
    </span><span class="nt">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
    </span><span class="nt">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code></pre>
 
+<h1 id="user-auth">User Auth</h1>
 
+<h2 id="register-user">Register User</h2>
 
-</span><span class="err">#</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">Auth</span><span class="w">
-
-</span><span class="err">##</span><span class="w"> </span><span class="err">Register</span><span class="w"> </span><span class="err">User</span><span class="w">
-
-</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">request</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">trickle</span><span class="w"> </span><span class="err">user.</span><span class="w"> </span><span class="err">Make</span><span class="w"> </span><span class="err">sure</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">provide</span><span class="w"> </span><span class="err">`username`,</span><span class="w"> </span><span class="err">`password`</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">`email`</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">fields.</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">might</span><span class="w"> </span><span class="err">fail</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">them.</span><span class="w">
-
-</span><span class="err">```json</span><span class="w">
-</span><span class="p">{</span><span class="w">
+<blockquote>
+<p>Example request to create a new trickle user. Make sure to provide <code class="prettyprint">username</code>, <code class="prettyprint">password</code> and <code class="prettyprint">email</code> because they are the required fields. Request might fail without them.</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
    </span><span class="nt">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
    </span><span class="nt">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
    </span><span class="nt">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample@gmail.com"</span><span class="p">,</span><span class="w">
@@ -288,8 +287,8 @@ Remember — password validation will save us a lot of time :)
 <blockquote>
 <p>Example URL:</p>
 </blockquote>
-<pre class="highlight http"><code><span class="err">https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
-</span></code></pre>
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
+</code></pre>
 
 <blockquote>
 <p>if successful, server returns JSON structured like this:</p>
@@ -348,8 +347,8 @@ Remember — password validation will save us a lot of time :)
 <blockquote>
 <p>Example URL:</p>
 </blockquote>
-<pre class="highlight http"><code><span class="err">https://trickle-shop.herokuapp.com/user/username/sample
-</span></code></pre>
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/user/username/sample
+</code></pre>
 
 <blockquote>
 <p>if successful, server returns JSON structured like this:</p>
@@ -408,8 +407,8 @@ Remember — cookies for authorization coming soon :)
 <blockquote>
 <p>Example URL:</p>
 </blockquote>
-<pre class="highlight http"><code><span class="err">https://trickle-shop.herokuapp.com/user/search/username/sample
-</span></code></pre>
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/user/search/username/sample
+</code></pre>
 
 <blockquote>
 <p>if successful, server returns JSON structured like this:</p>
@@ -483,8 +482,8 @@ Remember — cookies for authorization coming soon :)
 <blockquote>
 <p>Example URL:</p>
 </blockquote>
-<pre class="highlight http"><code><span class="err">https://trickle-shop.herokuapp.com/user/all
-</span></code></pre>
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/user/all
+</code></pre>
 
 <blockquote>
 <p>if successful, server returns JSON structured like this:</p>

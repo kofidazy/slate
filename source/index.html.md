@@ -38,8 +38,7 @@ All responses are of the format JSON. they contain the following keys :
    "message" : "SUCCESS",
    "count" : 2
 }
-
-
+``` 
 
 # User Auth
 
@@ -147,7 +146,7 @@ Remember — password validation will save us a lot of time :)
 
 > Example URL:
 
-```http
+```curl
 https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
 ```
 
@@ -197,7 +196,7 @@ Remember — password validation will save us a lot of time :)
 
 > Example URL:
 
-```http
+```curl
 https://trickle-shop.herokuapp.com/user/username/sample
 ```
 
@@ -248,7 +247,7 @@ Remember — cookies for authorization coming soon :)
 
 > Example URL:
 
-```http
+```curl
 https://trickle-shop.herokuapp.com/user/search/username/sample
 ```
 
@@ -314,7 +313,7 @@ Remember — cookies for authorization coming soon :)
 
 > Example URL:
 
-```http
+```curl
 https://trickle-shop.herokuapp.com/user/all
 ```
 

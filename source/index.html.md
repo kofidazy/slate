@@ -423,6 +423,7 @@ Remember — cookies for authorization coming soon :)
   "message": "STORE_CREATED",
   "count": 1
 }
+```
 
 This endpoint is to create a shop for a particular user
 

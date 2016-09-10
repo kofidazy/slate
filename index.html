@@ -258,6 +258,67 @@ Remember — email validation will save us a lot of time :)
 Remember — password validation will save us a lot of time :)
 </aside>
 
+<h1 id="user-management">User Management</h1>
+
+<h2 id="find-user-by-id">Find User By ID</h2>
+
+<blockquote>
+<p>Example URL:
+<code class="prettyprint">http
+https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
+</code></p>
+
+<p>if successful, server returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w">   </span><span class="s2">"result"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addico"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"membership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"wishList"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WELCOME"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint is to find a user by a given ID</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET [base-url]/user/id/{{userID}}</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userID</td>
+<td>true</td>
+<td>the ID of the user to retrieve</td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — password validation will save us a lot of time :)
+</aside>
+
           <h1 id="errors">Errors</h1>
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>

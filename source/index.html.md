@@ -15,7 +15,21 @@ search: true
 
 # Introduction
 
-The `base-url` for all requests is `https://trickle-shop.herokuapp.com`
+The `base-url` for all requests is : 
+
+`https://trickle-shop.herokuapp.com`
+
+All responses are of the format JSON. they contain the following keys :
+
+* status - shows the status of the request `true` or `false`
+
+* result - contains the actual data you requested for
+
+* message - show information of the response
+
+* count - contaisn the number of objects returned
+
+
 
 # User Auth
 

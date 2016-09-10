@@ -124,18 +124,30 @@
 <ul>
 <li><p>status - shows the status of the request <code class="prettyprint">true</code> or <code class="prettyprint">false</code></p></li>
 <li><p>result - contains the actual data you requested for</p></li>
-<li><p>message - show information of the response</p></li>
+<li><p>message - shows information of the response</p></li>
 <li><p>count - contaisn the number of objects returned</p></li>
 </ul>
 
-<h1 id="user-auth">User Auth</h1>
-
-<h2 id="register-user">Register User</h2>
-
 <blockquote>
-<p>Example request to create a new trickle user. Make sure to provide <code class="prettyprint">username</code>, <code class="prettyprint">password</code> and <code class="prettyprint">email</code> because they are the required fields. Request might fail without them.</p>
+<p>Example of Response</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+   </span><span class="nt">"status"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"result"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HELLO WORLD"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"message"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+   </span><span class="nt">"count"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+
+
+</span><span class="err">#</span><span class="w"> </span><span class="err">User</span><span class="w"> </span><span class="err">Auth</span><span class="w">
+
+</span><span class="err">##</span><span class="w"> </span><span class="err">Register</span><span class="w"> </span><span class="err">User</span><span class="w">
+
+</span><span class="err">&gt;</span><span class="w"> </span><span class="err">Example</span><span class="w"> </span><span class="err">request</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">new</span><span class="w"> </span><span class="err">trickle</span><span class="w"> </span><span class="err">user.</span><span class="w"> </span><span class="err">Make</span><span class="w"> </span><span class="err">sure</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">provide</span><span class="w"> </span><span class="err">`username`,</span><span class="w"> </span><span class="err">`password`</span><span class="w"> </span><span class="err">and</span><span class="w"> </span><span class="err">`email`</span><span class="w"> </span><span class="err">because</span><span class="w"> </span><span class="err">they</span><span class="w"> </span><span class="err">are</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">fields.</span><span class="w"> </span><span class="err">Request</span><span class="w"> </span><span class="err">might</span><span class="w"> </span><span class="err">fail</span><span class="w"> </span><span class="err">without</span><span class="w"> </span><span class="err">them.</span><span class="w">
+
+</span><span class="err">```json</span><span class="w">
+</span><span class="p">{</span><span class="w">
    </span><span class="nt">"username"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
    </span><span class="nt">"password"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
    </span><span class="nt">"email"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"sample@gmail.com"</span><span class="p">,</span><span class="w">
@@ -269,7 +281,7 @@ Remember — email validation will save us a lot of time :)
 Remember — password validation will save us a lot of time :)
 </aside>
 
-<h1 id="user-management">User Management</h1>
+<h1 id="user-api">User API</h1>
 
 <h2 id="find-user-by-id">Find User By ID</h2>
 
@@ -543,6 +555,66 @@ Remember — cookies for authorization coming soon :)
 <aside class="success">
 Remember — cookies for authorization coming soon :)
 </aside>
+
+<h1 id="shop-api">Shop API</h1>
+
+<h2 id="add-shop">Add Shop</h2>
+
+<blockquote>
+<p>Example Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"user_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"store_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Beats Store"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"store_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The most affordable Beats By Dre headphones on the market"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tag"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"headphone"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>if successful, server returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47ab0e4b0eca0903e167b"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"store_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beats Store"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"store_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The most affordable Beats By Dre headphones on the market"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"headphone"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STORE_CREATED"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="err">This</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">particular</span><span class="w"> </span><span class="err">user</span><span class="w">
+
+</span><span class="err">###</span><span class="w"> </span><span class="err">HTTP</span><span class="w"> </span><span class="err">Request</span><span class="w">
+
+</span><span class="err">`POST</span><span class="w"> </span><span class="p">[</span><span class="err">base-url</span><span class="p">]</span><span class="err">/usershop/create/shop`</span><span class="w">
+
+</span><span class="err">###</span><span class="w"> </span><span class="err">Query</span><span class="w"> </span><span class="err">Parameters</span><span class="w">
+
+</span><span class="err">Parameter</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">Required</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">Description</span><span class="w">
+</span><span class="err">---------</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">-------</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">-----------</span><span class="w">
+</span><span class="err">user_id</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">owner</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
+</span><span class="err">store_name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
+</span><span class="err">store_description</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
+</span><span class="err">image</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
+</span><span class="err">tag</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">associate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">`headphones`</span><span class="w">
+
+</span><span class="err">&lt;aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
+</span><span class="err">Remember</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">rightful</span><span class="w"> </span><span class="err">owner</span><span class="w">
+</span><span class="err">&lt;/aside&gt;</span><span class="w">
+
+
+</span></code></pre>
 
           <h1 id="errors">Errors</h1>
 

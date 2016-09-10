@@ -122,6 +122,7 @@ Remember — password validation will save us a lot of time :)
 ## Find User By ID
 
 > Example URL:
+
 ```http
 https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
 ```

@@ -592,29 +592,53 @@ Remember — cookies for authorization coming soon :)
   </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STORE_CREATED"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
-
-</span><span class="err">This</span><span class="w"> </span><span class="err">endpoint</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">create</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">particular</span><span class="w"> </span><span class="err">user</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">HTTP</span><span class="w"> </span><span class="err">Request</span><span class="w">
-
-</span><span class="err">`POST</span><span class="w"> </span><span class="p">[</span><span class="err">base-url</span><span class="p">]</span><span class="err">/usershop/create/shop`</span><span class="w">
-
-</span><span class="err">###</span><span class="w"> </span><span class="err">Query</span><span class="w"> </span><span class="err">Parameters</span><span class="w">
-
-</span><span class="err">Parameter</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">Required</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">Description</span><span class="w">
-</span><span class="err">---------</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">-------</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">-----------</span><span class="w">
-</span><span class="err">user_id</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">id</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">owner</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
-</span><span class="err">store_name</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">name</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
-</span><span class="err">store_description</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">description</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
-</span><span class="err">image</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">image</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w">
-</span><span class="err">tag</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">tag</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">associate</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">example</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="err">`headphones`</span><span class="w">
-
-</span><span class="err">&lt;aside</span><span class="w"> </span><span class="err">class=</span><span class="s2">"success"</span><span class="err">&gt;</span><span class="w">
-</span><span class="err">Remember</span><span class="w"> </span><span class="err">—</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">user_id</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">required</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">assign</span><span class="w"> </span><span class="err">the</span><span class="w"> </span><span class="err">shop</span><span class="w"> </span><span class="err">to</span><span class="w"> </span><span class="err">its</span><span class="w"> </span><span class="err">rightful</span><span class="w"> </span><span class="err">owner</span><span class="w">
-</span><span class="err">&lt;/aside&gt;</span><span class="w">
-
-
 </span></code></pre>
+
+<p>This endpoint is to create a shop for a particular user</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST [base-url]/usershop/create/shop</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>the id of the owner of the shop</td>
+</tr>
+<tr>
+<td>store_name</td>
+<td>true</td>
+<td>the name of the shop</td>
+</tr>
+<tr>
+<td>store_description</td>
+<td>true</td>
+<td>description of the shop</td>
+</tr>
+<tr>
+<td>image</td>
+<td>false</td>
+<td>image of the shop</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>false</td>
+<td>a tag to associate the shop with example : <code class="prettyprint">headphones</code></td>
+</tr>
+</tbody></table>
+
+<aside class="success">
+Remember — the user_id is required to assign the shop to its rightful owner
+</aside>
 
           <h1 id="errors">Errors</h1>
 

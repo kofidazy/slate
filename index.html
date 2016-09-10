@@ -273,7 +273,7 @@ Remember — password validation will save us a lot of time :)
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"result"</span><span class="p">:</span><span class="w">   </span><span class="s2">"result"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy"</span><span class="p">,</span><span class="w">
@@ -450,6 +450,84 @@ Remember — cookies for authorization coming soon :)
 <td>the username of the user to retrieve</td>
 </tr>
 </tbody></table>
+
+<aside class="success">
+Remember — cookies for authorization coming soon :)
+</aside>
+
+<h2 id="find-all-users">Find All Users</h2>
+
+<blockquote>
+<p>Example URL:</p>
+</blockquote>
+<pre class="highlight http"><code><span class="err">https://trickle-shop.herokuapp.com/user/all
+</span></code></pre>
+
+<blockquote>
+<p>if successful, server returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w">   </span><span class="p">[{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addico"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"membership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STANDARD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"wishList"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d33r47ee4b097a090347347"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$sVs/zUsjkcjsdvsdvsRKPcfP143443b8XXff7t1UHw7.zEeuIy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addico1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample1@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"membership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GOLD"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"wishList"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">},{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d33r47ee4b097a090347347"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample2"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"$2a$10$sVs/zUsjkcjsdvsdvsRKPcfP143443b8XXff7t1UHw7.zEeuIy"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"firstName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sir"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"lastName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Addico2"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"profilePicture"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sample2@gmail.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"membership"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PLATINUM"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followed"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"followers"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"wishList"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+  </span><span class="p">}],</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WELCOME"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint is to find all users</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET [base-url]/user/all</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p>none</p>
 
 <aside class="success">
 Remember — cookies for authorization coming soon :)

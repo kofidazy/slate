@@ -117,4 +117,55 @@ password | true | the password for the user `should not be less than 6 character
 <aside class="success">
 Remember — password validation will save us a lot of time :)
 </aside>
+# User Management
+
+## Find User By ID
+
+> Example URL:
+```http
+https://trickle-shop.herokuapp.com/user/id/57d3c27ee4b097a655347347
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result":   "result": {
+    "id": "57d3c27ee4b097a655347347",
+    "username": "sample",
+    "password": "$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy",
+    "firstName": "Sir",
+    "lastName": "Addico",
+    "profilePicture": null,
+    "email": "sample@gmail.com",
+    "membership": "STANDARD",
+    "activated": false,
+    "followed": null,
+    "followers": null,
+    "wishList": null,
+    "dateCreated": {},
+    "lastModified": {}
+  },
+  "message": "WELCOME",
+  "count": 1
+}
+```
+
+This endpoint is to find a user by a given ID
+
+### HTTP Request
+
+`GET [base-url]/user/id/{{userID}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+userID | true | the ID of the user to retrieve
+
+<aside class="success">
+Remember — password validation will save us a lot of time :)
+</aside>
+
 

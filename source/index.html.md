@@ -25,9 +25,19 @@ All responses are of the format JSON. they contain the following keys :
 
 * result - contains the actual data you requested for
 
-* message - show information of the response
+* message - shows information of the response
 
 * count - contaisn the number of objects returned
+
+> Example of Response
+
+```json
+{
+   "status" : true,
+   "result" : "HELLO WORLD",
+   "message" : "SUCCESS",
+   "count" : 2
+}
 
 
 
@@ -131,7 +141,7 @@ password | true | the password for the user `should not be less than 6 character
 <aside class="success">
 Remember — password validation will save us a lot of time :)
 </aside>
-# User Management
+# User API
 
 ## Find User By ID
 
@@ -375,6 +385,63 @@ none
 
 <aside class="success">
 Remember — cookies for authorization coming soon :)
+</aside>
+
+# Shop API
+
+## Add Shop
+
+> Example Request:
+
+```json
+{
+  "user_id" : "57d3c27ee4b097a655347347",
+  "store_name" : "Beats Store",
+  "store_description" : "The most affordable Beats By Dre headphones on the market",
+  "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+  "tag" : "headphone"
+}
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": {
+    "id": "57d47ab0e4b0eca0903e167b",
+    "user_id": "57d3c27ee4b097a655347347",
+    "store_name": "Beats Store",
+    "store_description": "The most affordable Beats By Dre headphones on the market",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+    "tag": "headphone",
+    "views": 0,
+    "status": true,
+    "dateCreated": {},
+    "lastModified": {}
+  },
+  "message": "STORE_CREATED",
+  "count": 1
+}
+
+This endpoint is to create a shop for a particular user
+
+### HTTP Request
+
+`POST [base-url]/usershop/create/shop`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+user_id | true | the id of the owner of the shop
+store_name | true | the name of the shop
+store_description | true | description of the shop
+image | false | image of the shop
+tag | false | a tag to associate the shop with example : `headphones`
+
+<aside class="success">
+Remember — the user_id is required to assign the shop to its rightful owner
 </aside>
 
 

@@ -15,7 +15,6 @@ search: true
 
 # Introduction
 
-Welcome to the Trickle API!
 The `base-url` for all requests is `https://trickle-shop.herokuapp.com`
 
 # User Auth

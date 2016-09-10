@@ -169,4 +169,120 @@ userID | true | the ID of the user to retrieve
 Remember — password validation will save us a lot of time :)
 </aside>
 
+## Find User By Username
+
+> Example URL:
+
+```http
+https://trickle-shop.herokuapp.com/user/username/sample
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": {
+    "id": "57d3c27ee4b097a655347347",
+    "username": "sample",
+    "password": "$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy",
+    "firstName": "Sir",
+    "lastName": "Addico",
+    "profilePicture": null,
+    "email": "sample@gmail.com",
+    "membership": "STANDARD",
+    "activated": false,
+    "followed": null,
+    "followers": null,
+    "wishList": null,
+    "dateCreated": {},
+    "lastModified": {}
+  },
+  "message": "WELCOME",
+  "count": 2
+}
+```
+
+This endpoint is to find a user with given username
+
+### HTTP Request
+
+`GET [base-url]/user/username/{{username}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+username | true | the username of user to retrieve
+
+<aside class="success">
+Remember — cookies for authorization coming soon :)
+</aside>
+
+
+## Find Users By Username
+
+> Example URL:
+
+```http
+https://trickle-shop.herokuapp.com/user/search/username/sample
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result":   [{
+    "id": "57d3c27ee4b097a655347347",
+    "username": "sample",
+    "password": "$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy",
+    "firstName": "Sir",
+    "lastName": "Addico",
+    "profilePicture": null,
+    "email": "sample@gmail.com",
+    "membership": "STANDARD",
+    "activated": false,
+    "followed": null,
+    "followers": null,
+    "wishList": null,
+    "dateCreated": {},
+    "lastModified": {}
+  },{
+    "id": "57d33r47ee4b097a090347347",
+    "username": "sample1",
+    "password": "$2a$10$sVs/zUsjkcjsdvsdvsRKPcfP143443b8XXff7t1UHw7.zEeuIy",
+    "firstName": "Sir",
+    "lastName": "Addico1",
+    "profilePicture": null,
+    "email": "sample1@gmail.com",
+    "membership": "GOLD",
+    "activated": false,
+    "followed": null,
+    "followers": null,
+    "wishList": null,
+    "dateCreated": {},
+    "lastModified": {}
+  }],
+  "message": "WELCOME",
+  "count": 2
+}
+```
+
+This endpoint is to find users by a given username
+
+### HTTP Request
+
+`GET [base-url]/user/search/username/{{username}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+username | true | the username of the user to retrieve
+
+<aside class="success">
+Remember — cookies for authorization coming soon :)
+</aside>
+
 

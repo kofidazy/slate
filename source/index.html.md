@@ -388,6 +388,112 @@ Remember — cookies for authorization coming soon :)
 
 # Shop API
 
+## Find Shop By ID
+
+> Example URL:
+
+```curl
+https://trickle-shop.herokuapp.com/usershop/57d47ab0e4b0eca0903e167b
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": {
+    "id": "57d47ab0e4b0eca0903e167b",
+    "user_id": "57d3c27ee4b097a655347347",
+    "store_name": "Beats Store",
+    "store_description": "The most affordable Beats By Dre headphones on the market",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+    "tag": "headphone",
+    "views": 0,
+    "status": true,
+    "dateCreated": {},
+    "lastModified": {}
+    },
+  "message": "WELCOME",
+  "count": 1
+}
+```
+
+This endpoint is to find a shop with given ID
+
+### HTTP Request
+
+`GET [base-url]/usershop/{{shop_id}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+shop_id | true | the ID of the shop to retrieve
+
+<aside class="success">
+Remember — cookies for authorization coming soon :)
+</aside>
+
+
+## Find AllProducts for Shop
+
+> Example URL:
+
+```curl
+https://trickle-shop.herokuapp.com/shop/all/products/57d47a09e4b0eca0903e167a
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": [
+    {
+      "id": "57d4a38ee4b0a424e0a8eb56",
+      "shop_id": "57d47a09e4b0eca0903e167a",
+      "user_id": "57d3c27ee4b097a655347347",
+      "product_name": "Esense Casual",
+      "product_description": "Esense if the most innovative footwear on the market today",
+      "product_price": 30,
+      "in_stock": true,
+      "on_sale": false,
+      "stock": 8,
+      "views": 0,
+      "images": [
+        "http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg",
+        "http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg",
+        "http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"
+      ],
+      "tag": "shoe",
+      "comments": null,
+      "dateCreated": {},
+      "lastModified": {}
+    }
+  ],
+  "message": "PRODUCTS_FOUND",
+  "count": 1
+}
+```
+
+This endpoint is to find all the products of a shop with given ID
+
+### HTTP Request
+
+`GET [base-url]/shop/all/products/{{shop_id}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+shop_id | true | the ID of the shop whose products to retrieve
+
+<aside class="info">
+Remember — finding the shop by ID is a better alternative to finding by shop_name :)
+</aside>
+
+
+
 ## Add Shop
 
 > Example Request:
@@ -438,10 +544,116 @@ user_id | true | the id of the owner of the shop
 store_name | true | the name of the shop
 store_description | true | description of the shop
 image | false | image of the shop
-tag | false | a tag to associate the shop with example : `headphones`
+tag | false | a tag to associate the shop with example : `headphone`
 
 <aside class="success">
 Remember — the user_id is required to assign the shop to its rightful owner
+</aside>
+
+
+# Product API
+
+## Find Product By ID
+
+> Example URL:
+
+```curl
+https://trickle-shop.herokuapp.com/userproduct/57d47ab0e4b0eca0903e167b
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": {
+    "id": "57d47ab0e4b0eca0903e167b",
+    "user_id": "57d3c27ee4b097a655347347",
+    "store_name": "Beats Store",
+    "store_description": "The most affordable Beats By Dre headphones on the market",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+    "tag": "headphone",
+    "views": 0,
+    "status": true,
+    "dateCreated": {},
+    "lastModified": {}
+    },
+  "message": "WELCOME",
+  "count": 1
+}
+```
+
+This endpoint is to find a product with given ID
+
+### HTTP Request
+
+`GET [base-url]/userproduct/{{product_id}}`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+product_id | true | the ID of the product to retrieve
+
+<aside class="success">
+Remember — cookies for authorization coming soon :)
+</aside>
+
+
+## Add Shop
+
+> Example Request:
+
+```json
+{
+  "user_id" : "57d3c27ee4b097a655347347",
+  "store_name" : "Beats Store",
+  "store_description" : "The most affordable Beats By Dre headphones on the market",
+  "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+  "tag" : "headphone"
+}
+```
+
+> if successful, server returns JSON structured like this:
+
+```json
+{
+  "status": true,
+  "result": {
+    "id": "57d47ab0e4b0eca0903e167b",
+    "user_id": "57d3c27ee4b097a655347347",
+    "store_name": "Beats Store",
+    "store_description": "The most affordable Beats By Dre headphones on the market",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
+    "tag": "headphone",
+    "views": 0,
+    "status": true,
+    "dateCreated": {},
+    "lastModified": {}
+  },
+  "message": "STORE_CREATED",
+  "count": 1
+}
+```
+
+This endpoint is to add a product to a particular user
+
+### HTTP Request
+
+`POST [base-url]/userproduct/create/product`
+
+### Query Parameters
+
+Parameter | Required | Description
+--------- | ------- | -----------
+shop_id | true | the id of the shop to add to
+product_name | true | the name of the product
+product_description | true | description of the product
+images | false | images of the product
+tag | false | a tag to associate the product with ,example : `nike`
+
+<aside class="success">
+Remember — the shop_id is required to assign the shop to its rightful owner
 </aside>
 
 

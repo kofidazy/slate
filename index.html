@@ -820,17 +820,22 @@ Remember — the user_id is required to assign the shop to its rightful owner
 Remember — cookies for authorization coming soon :)
 </aside>
 
-<h2 id="add-shop">Add Shop</h2>
+<h2 id="add-product-to-shop">Add Product to Shop`</h2>
 
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"shop_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47a09e4b0eca0903e167a"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"user_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"store_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Beats Store"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"store_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"The most affordable Beats By Dre headphones on the market"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"image"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tag"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"headphone"</span><span class="w">
+  </span><span class="nt">"product_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense Casual"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense if the most innovative footwear on the market today"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"product_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"in_stock"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"on_sale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"stock"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tag"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"shoe"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg"</span><span class="p">,</span><span class="s2">"http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg"</span><span class="p">,</span><span class="s2">"http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"</span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -840,23 +845,32 @@ Remember — cookies for authorization coming soon :)
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47ab0e4b0eca0903e167b"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d4a38ee4b0a424e0a8eb56"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47a09e4b0eca0903e167a"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Beats Store"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"store_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"The most affordable Beats By Dre headphones on the market"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"headphone"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense Casual"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense if the most innovative footwear on the market today"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"product_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"in_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"on_sale"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
     </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shoe"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
     </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STORE_CREATED"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT_CREATED"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint is to add a product to a particular user</p>
+<p>This endpoint is to add a product to a particular shop</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
@@ -875,6 +889,11 @@ Remember — cookies for authorization coming soon :)
 <td>shop_id</td>
 <td>true</td>
 <td>the id of the shop to add to</td>
+</tr>
+<tr>
+<td>user_id</td>
+<td>true</td>
+<td>the id of the shop owner</td>
 </tr>
 <tr>
 <td>product_name</td>

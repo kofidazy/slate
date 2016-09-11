@@ -600,17 +600,22 @@ Remember — cookies for authorization coming soon :)
 </aside>
 
 
-## Add Shop
+## Add Product to Shop`
 
 > Example Request:
 
 ```json
 {
+  "shop_id" : "57d47a09e4b0eca0903e167a",
   "user_id" : "57d3c27ee4b097a655347347",
-  "store_name" : "Beats Store",
-  "store_description" : "The most affordable Beats By Dre headphones on the market",
-  "image" : "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
-  "tag" : "headphone"
+  "product_name" : "Esense Casual",
+  "product_description" : "Esense if the most innovative footwear on the market today",
+  "product_price" : 30,
+  "in_stock" : true,
+  "on_sale" : false,
+  "stock" : 8,
+  "tag" : "shoe",
+  "images" : ["http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg","http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg","http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"]
 }
 ```
 
@@ -620,23 +625,32 @@ Remember — cookies for authorization coming soon :)
 {
   "status": true,
   "result": {
-    "id": "57d47ab0e4b0eca0903e167b",
+    "id": "57d4a38ee4b0a424e0a8eb56",
+    "shop_id": "57d47a09e4b0eca0903e167a",
     "user_id": "57d3c27ee4b097a655347347",
-    "store_name": "Beats Store",
-    "store_description": "The most affordable Beats By Dre headphones on the market",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Beats_Electronics_logo.svg/1024px-Beats_Electronics_logo.svg.png",
-    "tag": "headphone",
+    "product_name": "Esense Casual",
+    "product_description": "Esense if the most innovative footwear on the market today",
+    "product_price": 30,
+    "in_stock": true,
+    "on_sale": false,
+    "stock": 8,
     "views": 0,
-    "status": true,
+    "images": [
+      "http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg",
+      "http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg",
+      "http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"
+    ],
+    "tag": "shoe",
+    "comments": null,
     "dateCreated": {},
     "lastModified": {}
   },
-  "message": "STORE_CREATED",
+  "message": "PRODUCT_CREATED",
   "count": 1
 }
 ```
 
-This endpoint is to add a product to a particular user
+This endpoint is to add a product to a particular shop
 
 ### HTTP Request
 
@@ -647,6 +661,7 @@ This endpoint is to add a product to a particular user
 Parameter | Required | Description
 --------- | ------- | -----------
 shop_id | true | the id of the shop to add to
+user_id | true | the id of the shop owner
 product_name | true | the name of the product
 product_description | true | description of the product
 images | false | images of the product

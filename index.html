@@ -782,107 +782,6 @@ Remember — the shop_id is required to assign the shop to its rightful owner
 Remember — userid is very important. Will return error is userid is not present :)
 </aside>
 
-<h2 id="add-product-to-shop">Add Product to Shop`</h2>
-
-<blockquote>
-<p>Example Request:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"shop_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47a09e4b0eca0903e167a"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"user_id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"product_name"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense Casual"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"product_description"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense if the most innovative footwear on the market today"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"product_price"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"in_stock"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"on_sale"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"stock"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"tag"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"shoe"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"images"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg"</span><span class="p">,</span><span class="s2">"http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg"</span><span class="p">,</span><span class="s2">"http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"</span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<blockquote>
-<p>if successful, server returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d4a38ee4b0a424e0a8eb56"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d47a09e4b0eca0903e167a"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"57d3c27ee4b097a655347347"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense Casual"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"product_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Esense if the most innovative footwear on the market today"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"product_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"in_stock"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"on_sale"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"stock"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"views"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"images"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="s2">"http://ecx.images-amazon.com/images/I/41EWkstrQsL.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"http://ecx.images-amazon.com/images/I/41%2Br%2BRJ7pML.jpg"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"http://ecx.images-amazon.com/images/I/61ELxKSG34L._UL1500_.jpg"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"tag"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shoe"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"dateCreated"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
-    </span><span class="nt">"lastModified"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCT_CREATED"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint is to add a product to a particular shop</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST [base-url]/userproduct/create/product</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>shop_id</td>
-<td>true</td>
-<td>the id of the shop to add to</td>
-</tr>
-<tr>
-<td>user_id</td>
-<td>true</td>
-<td>the id of the shop owner</td>
-</tr>
-<tr>
-<td>product_name</td>
-<td>true</td>
-<td>the name of the product</td>
-</tr>
-<tr>
-<td>product_description</td>
-<td>true</td>
-<td>description of the product</td>
-</tr>
-<tr>
-<td>images</td>
-<td>false</td>
-<td>images of the product</td>
-</tr>
-<tr>
-<td>tag</td>
-<td>false</td>
-<td>a tag to associate the product with ,example : <code class="prettyprint">nike</code></td>
-</tr>
-</tbody></table>
-
-<aside class="success">
-Remember — the shop_id is required to assign the shop to its rightful owner
-</aside>
-
 <h2 id="get-comments-for-a-particular-post">Get Comments for a particular post</h2>
 
 <blockquote>
@@ -924,12 +823,12 @@ Remember — the shop_id is required to assign the shop to its rightful owner
 </tr>
 </tbody></table>
 
-<h2 id="get-all-user-39-s-post">Get all user&rsquo;s post`</h2>
+<h2 id="get-all-user-39-s-posts">Get all user&rsquo;s posts</h2>
 
 <blockquote>
 <p>Example Request:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/all/posts/{id}
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/post/all/posts/{id}
 </code></pre>
 
 <blockquote>
@@ -947,7 +846,7 @@ Remember — the shop_id is required to assign the shop to its rightful owner
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET [base-url]/all/posts/{id}</code></p>
+<p><code class="prettyprint">GET [base-url]/post/all/posts/{id}</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -959,15 +858,11 @@ Remember — the shop_id is required to assign the shop to its rightful owner
 </tr>
 </thead><tbody>
 <tr>
-<td>user_id</td>
+<td>id</td>
 <td>true</td>
 <td>the id of the user to get posts for</td>
 </tr>
 </tbody></table>
-
-<aside class="success">
-Remember — the shop_id is required to assign the shop to its rightful owner
-</aside>
 
 <h2 id="like-post">Like Post</h2>
 

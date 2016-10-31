@@ -714,6 +714,35 @@ Remember — cookies for authorization coming soon :)
 Remember — the shop_id is required to assign the shop to its rightful owner
 </aside>
 
+<h2 id="all-recent-products">All Recent Products</h2>
+
+<blockquote>
+<p>Example URL: </p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://trickle-shop.herokuapp.com/product/all/recent
+</code></pre>
+
+<blockquote>
+<p>if successful, server returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">array</span><span class="w"> </span><span class="err">of</span><span class="w"> </span><span class="err">products</span><span class="p">],</span><span class="w">
+  </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PRODUCTS_FOUND"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"count"</span><span class="p">:</span><span class="w"> </span><span class="err">x</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint is to fetch recent products </p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET [base-url]/product/all/recent</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<p>No params required</p>
+
 <h1 id="post-api">Post API</h1>
 
 <h2 id="create-a-post">Create a Post</h2>

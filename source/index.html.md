@@ -17,7 +17,7 @@ search: true
 
 The `base-url` for all requests is : 
 
-`https://trickle-shop.herokuapp.com`
+`https://finderr-esb.herokuapp.com/esb`
 
 All responses are of the format JSON. they contain the following keys :
 
@@ -44,15 +44,14 @@ All responses are of the format JSON. they contain the following keys :
 
 ## Register User
 
-> Example request to create a new trickle user. Make sure to provide `username`, `password` and `email` because they are the required fields. Request might fail without them.
+> Example request to create a new trickle user. Make sure to provide `username`, `password` and `email` because they are the required fields. Request will fail without them.
 
 ```json
 {
-   "username" : "sample",
-   "password" : "sample",
-   "email" : "sample@gmail.com",
-   "firstName" : "Sir",
-   "lastName" : "Addico"
+	"username" : "user",
+	"password" : "password",
+	"email" : "user@mail.com",
+	"mobile" : ""
 }
 ```
 
@@ -60,25 +59,98 @@ All responses are of the format JSON. they contain the following keys :
 
 ```json
 {
-  "status": true,
-  "result": {
-    "id": "57d3c27ee4b097a655347347",
-    "username": "sample",
-    "password": "$2a$10$sVs/zU5tj8qxJTjX5AbNfuFCouRKPcfP1b8XXff7t1UHw7.zEeuIy",
-    "firstName": "Sir",
-    "lastName": "Addico",
-    "profilePicture": null,
-    "email": "sample@gmail.com",
-    "membership": "STANDARD",
-    "activated": true,
-    "followed": null,
-    "followers": null,
-    "wishList": null,
-    "dateCreated": {},
-    "lastModified": {}
-  },
-  "message": "ACCOUNT_CREATED",
-  "count": 1
+	"status": true,
+	"result": {
+		"id": "5b01d841449bc6000492f47d",
+		"username": "user",
+		"password": "$2a$10$Wcx1B5OoIV9tcBsyVz6hEut2D.A0TOkNTPuIzTnVcU.Nj6zpLlXlW",
+		"firstName": null,
+		"lastName": null,
+		"profilePicture": null,
+		"email": "user@mail.com",
+		"mobile": "",
+		"membership": "STANDARD",
+		"activated": true,
+		"followed": null,
+		"followers": null,
+		"likes": null,
+		"reposts": null,
+		"number_of_followers": 0,
+		"number_of_followed": 0,
+		"number_of_likes": 0,
+		"number_of_reposts": 0,
+		"wishList": null,
+		"dateCreated": {
+			"yearOfEra": 2018,
+			"yearOfCentury": 18,
+			"weekyear": 2018,
+			"monthOfYear": 5,
+			"weekOfWeekyear": 20,
+			"hourOfDay": 20,
+			"minuteOfHour": 19,
+			"secondOfMinute": 13,
+			"millisOfSecond": 614,
+			"centuryOfEra": 20,
+			"year": 2018,
+			"dayOfMonth": 20,
+			"dayOfYear": 140,
+			"dayOfWeek": 7,
+			"era": 1,
+			"secondOfDay": 73153,
+			"minuteOfDay": 1219,
+			"millisOfDay": 73153614,
+			"millis": 1526847553614,
+			"zone": {
+				"fixed": true,
+				"id": "Etc/UTC"
+			},
+			"chronology": {
+				"zone": {
+					"fixed": true,
+					"id": "Etc/UTC"
+				}
+			},
+			"beforeNow": true,
+			"afterNow": false,
+			"equalNow": false
+		},
+		"lastModified": {
+			"yearOfEra": 2018,
+			"yearOfCentury": 18,
+			"weekyear": 2018,
+			"monthOfYear": 5,
+			"weekOfWeekyear": 20,
+			"hourOfDay": 20,
+			"minuteOfHour": 19,
+			"secondOfMinute": 13,
+			"millisOfSecond": 614,
+			"centuryOfEra": 20,
+			"year": 2018,
+			"dayOfMonth": 20,
+			"dayOfYear": 140,
+			"dayOfWeek": 7,
+			"era": 1,
+			"secondOfDay": 73153,
+			"minuteOfDay": 1219,
+			"millisOfDay": 73153614,
+			"millis": 1526847553614,
+			"zone": {
+				"fixed": true,
+				"id": "Etc/UTC"
+			},
+			"chronology": {
+				"zone": {
+					"fixed": true,
+					"id": "Etc/UTC"
+				}
+			},
+			"beforeNow": true,
+			"afterNow": false,
+			"equalNow": false
+		}
+	},
+	"message": "USER_REGISTERED",
+	"count": 1
 }
 ```
 
@@ -86,7 +158,7 @@ This endpoint registers new users.
 
 ### HTTP Request
 
-`POST [base-url]/registration/register`
+`POST [base-url]/register/user`
 
 ### Query Parameters
 
@@ -95,8 +167,7 @@ Parameter | Required | Description
 username | true | the display name of the new user
 password | true | the password for the user `should not be less than 6 characters`
 email | true | the correct email of the user `used for verification and notifications`
-firstName | false | user's first name
-lastName | false | user's last name
+mobile | false | the mobile number of the user `used for verification and notifications`
 
 <aside class="success">
 Remember — email validation will save us a lot of time :)
@@ -108,8 +179,8 @@ Remember — email validation will save us a lot of time :)
 
 ```json
 {
-   "username" : "sample",
-   "password" : "sample"
+   "username" : "user",
+   "password" : "password"
 }
 ```
 
@@ -117,10 +188,98 @@ Remember — email validation will save us a lot of time :)
 
 ```json
 {
-  "status": true,
-  "result": "sample",
-  "message": "WELCOME",
-  "count": 1
+	"status": true,
+	"result": {
+		"id": "5b01d841449bc6000492f47d",
+		"username": "user",
+		"password": "$2a$10$Wcx1B5OoIV9tcBsyVz6hEut2D.A0TOkNTPuIzTnVcU.Nj6zpLlXlW",
+		"firstName": null,
+		"lastName": null,
+		"profilePicture": null,
+		"email": "user@mail.com",
+		"mobile": "",
+		"membership": "STANDARD",
+		"activated": true,
+		"followed": null,
+		"followers": null,
+		"likes": null,
+		"reposts": null,
+		"number_of_followers": 0,
+		"number_of_followed": 0,
+		"number_of_likes": 0,
+		"number_of_reposts": 0,
+		"wishList": null,
+		"dateCreated": {
+			"yearOfEra": 2018,
+			"yearOfCentury": 18,
+			"weekyear": 2018,
+			"monthOfYear": 5,
+			"weekOfWeekyear": 20,
+			"hourOfDay": 20,
+			"minuteOfHour": 19,
+			"secondOfMinute": 13,
+			"millisOfSecond": 614,
+			"centuryOfEra": 20,
+			"year": 2018,
+			"dayOfMonth": 20,
+			"dayOfYear": 140,
+			"dayOfWeek": 7,
+			"era": 1,
+			"secondOfDay": 73153,
+			"minuteOfDay": 1219,
+			"millisOfDay": 73153614,
+			"millis": 1526847553614,
+			"zone": {
+				"fixed": true,
+				"id": "Etc/UTC"
+			},
+			"chronology": {
+				"zone": {
+					"fixed": true,
+					"id": "Etc/UTC"
+				}
+			},
+			"beforeNow": true,
+			"afterNow": false,
+			"equalNow": false
+		},
+		"lastModified": {
+			"yearOfEra": 2018,
+			"yearOfCentury": 18,
+			"weekyear": 2018,
+			"monthOfYear": 5,
+			"weekOfWeekyear": 20,
+			"hourOfDay": 20,
+			"minuteOfHour": 19,
+			"secondOfMinute": 13,
+			"millisOfSecond": 614,
+			"centuryOfEra": 20,
+			"year": 2018,
+			"dayOfMonth": 20,
+			"dayOfYear": 140,
+			"dayOfWeek": 7,
+			"era": 1,
+			"secondOfDay": 73153,
+			"minuteOfDay": 1219,
+			"millisOfDay": 73153614,
+			"millis": 1526847553614,
+			"zone": {
+				"fixed": true,
+				"id": "Etc/UTC"
+			},
+			"chronology": {
+				"zone": {
+					"fixed": true,
+					"id": "Etc/UTC"
+				}
+			},
+			"beforeNow": true,
+			"afterNow": false,
+			"equalNow": false
+		}
+	},
+	"message": "SUCCESS",
+	"count": 0
 }
 ```
 
